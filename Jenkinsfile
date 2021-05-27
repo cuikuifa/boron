@@ -6,7 +6,7 @@ pipeline {
             git_url    = 'https://github.com/cuikuifa/boron.git'
             docker_harbor_url    = '121.5.46.11/boron'
             project_name    = 'boron'
-            docker_tag    = ${env.BUILD_NUMBER}
+            docker_tag    = ${BUILD_NUMBER}
             project_port    = '8088'
             rancher_credential    = 'f2f5e5a7-b736-4f74-a641-08a45579f08e'
             rancher_workload    = '/project/c-4hzx8:p-8vz4z/workloads/deployment:boron:example-helloserver'
