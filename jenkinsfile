@@ -1,0 +1,32 @@
+env.CREDENTIALSID = 'f2f5e5a7-b736-4f74-a641-08a45579f08e'
+env.BRANCHES = 'develop'
+env.GIT_URL = 'git@gitlab.cce.up.gz:2021/boron.git'
+env.HARBOR_PROJECT = 'https://harbor.cce.up.gz/boron/zhouxw-testjava'
+env.PROJECT = 'zhouxw-testjava'
+env.K8S_MASTER = 'https://172.30.242.100'
+env.NAMESPACE = 'default'
+node {
+   if (env.Status == 'Deploy'){
+       stage('code pull') {
+           checkout([$class: 'GitSCM', branches: [[name: env.BRANCHES]],
+           doGenerateSubmoduleConfigurations: false,
+           userRemoteConfigs: [[credentialsId: env.CREDENTIALSID, url: env.GIT_URL]]])
+       }
+       stage('code Build') {
+         sh 'mvn -f pom.xml clean package -Dmaven.test.skip=true'
+       }
+       stage('docker push') {
+         sh 'cd ${WORKSPACE} && cp dockerfile target'
+         sh 'cd ${WORKSPACE}/target && docker build -t ${HARBOR_PROJECT}:${BUILD_NUMBER} .'
+         sh 'docker push ${HARBOR_PROJECT}:${BUILD_NUMBER}'
+         sh 'docker rmi ${HARBOR_PROJECT}:${BUILD_NUMBER}'
+       }
+       stage('k8s deploy') {
+         sh 'ssh ${K8S_MASTER} "kubectl -n ${NAMESPACE} set image deploy ${PROJECT} *=${HARBOR_PROJECT}:${BUILD_NUMBER}"'
+       }
+   }else{
+       stage('k8s rollback') {
+           sh 'ssh ${K8S_MASTER} "kubectl -n ${NAMESPACE} set image deploy ${PROJECT}*=${HARBOR_PROJECT}:${BUILD_ID}"'
+       }
+   }
+}

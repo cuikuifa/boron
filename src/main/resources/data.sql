@@ -1,0 +1,62 @@
+
+INSERT INTO `permission` VALUES ('1', 'user', 'user:list', 'list');
+INSERT INTO `permission` VALUES ('2', 'user', 'user:add', 'add');
+INSERT INTO `permission` VALUES ('3', 'user', 'user:update', 'update');
+INSERT INTO `permission` VALUES ('4', 'user', 'user:delete', 'delete');
+INSERT INTO `permission` VALUES ('5', 'role', 'role:list', 'list');
+INSERT INTO `permission` VALUES ('6', 'role', 'role:add', 'add');
+INSERT INTO `permission` VALUES ('7', 'role', 'role:update', 'update');
+INSERT INTO `permission` VALUES ('8', 'role', 'role:delete', 'delete');
+INSERT INTO `permission` VALUES ('9', 'article', 'article:list', 'list');
+INSERT INTO `permission` VALUES ('10', 'permission', 'permission:list', 'list');
+INSERT INTO `permission` VALUES ('11', 'permission', 'permission:add', 'add');
+INSERT INTO `permission` VALUES ('12', 'permission', 'permission:delete', 'delete');
+INSERT INTO `permission` VALUES ('13', 'permission', 'permission:update', 'update');
+
+INSERT INTO `role` VALUES ('6', 'ROLE_ABC');
+INSERT INTO `role` VALUES ('5', 'ROLE_ADD');
+INSERT INTO `role` VALUES ('1', 'ROLE_ADMIN');
+INSERT INTO `role` VALUES ('3', 'ROLE_TEST');
+INSERT INTO `role` VALUES ('2', 'ROLE_USER');
+
+INSERT INTO `role_permission` VALUES ('2', '9');
+INSERT INTO `role_permission` VALUES ('2', '10');
+INSERT INTO `role_permission` VALUES ('3', '1');
+INSERT INTO `role_permission` VALUES ('3', '2');
+INSERT INTO `role_permission` VALUES ('3', '3');
+INSERT INTO `role_permission` VALUES ('3', '4');
+INSERT INTO `role_permission` VALUES ('3', '5');
+INSERT INTO `role_permission` VALUES ('3', '6');
+INSERT INTO `role_permission` VALUES ('3', '7');
+INSERT INTO `role_permission` VALUES ('3', '8');
+INSERT INTO `role_permission` VALUES ('3', '9');
+INSERT INTO `role_permission` VALUES ('3', '10');
+INSERT INTO `role_permission` VALUES ('5', '1');
+INSERT INTO `role_permission` VALUES ('5', '5');
+INSERT INTO `role_permission` VALUES ('5', '9');
+INSERT INTO `role_permission` VALUES ('5', '10');
+INSERT INTO `role_permission` VALUES ('6', '1');
+INSERT INTO `role_permission` VALUES ('6', '5');
+INSERT INTO `role_permission` VALUES ('6', '6');
+INSERT INTO `role_permission` VALUES ('6', '9');
+INSERT INTO `role_permission` VALUES ('6', '10');
+
+INSERT INTO `user` VALUES ('1', 'admin@qq.com', 'admin', '$2a$10$95xU5ZpkLz7ZrEk/hSvxHOZliUYKo0K1iRnUD8iStSdv.O9c3rvtC', 'https://www.tupianku.com/view/large/13862/640.jpeg', 'IT', '2018-02-01 00:00:00', '2018-10-23 18:21:54');
+INSERT INTO `user` VALUES ('2', 'user@qq.com', 'user', '$10$95xU5ZpkLz7ZrEk/hSvxHOZliUYKo0K1iRnUD8iStSdv.O9c3rvtC', 'https://www.tupianku.com/view/large/13862/640.jpeg', 'A normal user', '2018-02-02 00:00:00', '2018-08-06 09:28:35');
+INSERT INTO `user` VALUES ('3', 'test@qq.com', 'test', '$2a$10$ItmuMLR4wUb5jjkBzg/CwuQADK7d9qbU725e.KyT/lLJEZeykDL62', 'https://www.tupianku.com/view/large/13862/640.jpeg', 'To Test', '2018-02-03 00:00:00', '2018-08-01 16:35:15');
+INSERT INTO `user` VALUES ('4', '1107022342@qq.com', '233moutian', '$2a$10$Svdaok0w7Qb43j7OuYOQO.O0mLeC2Nz8I.9IKpjZ2pECqbASKA9F2', 'https://www.tupianku.com/view/large/13862/640.jpeg', null, null, null);
+INSERT INTO `user` VALUES ('5', '747608835@qq.com', 'zhaozeyu', '$2a$10$LTlekj8efcDp1oVN/abUpuM4wDgGczyCMKR7VDG2THlmcgCSdZdOK', 'https://www.tupianku.com/view/large/13862/640.jpeg', null, null, null);
+INSERT INTO `user` VALUES ('6', '1107022349@qq.com', 'sbzzw', '$2a$10$w61MlFWJkYHqhQ5z/9XlcOlWiCgzGmhdegP20DQ/Jxc1HKCNF9VJ6', 'https://www.tupianku.com/view/large/13862/640.jpeg', null, null, null);
+INSERT INTO `user` VALUES ('7', '7321231231@qq.com', 'edfwe', '$2a$10$PB.TFtLVm3c6sL8UYPmlaeiDrltskC1YrQG1y5FAZX3RdtnfNT3Hy', 'https://www.tupianku.com/view/large/13862/640.jpeg', null, null, null);
+INSERT INTO `user` VALUES ('8', '11007022342@qq.com', '987654321', '$2a$10$511DvHfr1z7Vj/fec.2m3.crVlFuQqNlOG6UIqczvFEjGUxdu.cXK', 'https://www.tupianku.com/view/large/13862/640.jpeg', null, null, null);
+INSERT INTO `user` VALUES ('9', '54632846@qq.com', 'sihbw', '$2a$10$8m1ziXK0JE4ZU1AdAuYh2OgKWY4dZ0qYhPodvjsKjtc.UEqIGrh8.', 'https://www.tupianku.com/view/large/13862/640.jpeg', null, null, null);
+
+INSERT INTO `user_role` VALUES ('1', '1');
+INSERT INTO `user_role` VALUES ('2', '2');
+INSERT INTO `user_role` VALUES ('3', '3');
+INSERT INTO `user_role` VALUES ('4', '3');
+INSERT INTO `user_role` VALUES ('5', '2');
+INSERT INTO `user_role` VALUES ('6', '2');
+INSERT INTO `user_role` VALUES ('7', '2');
+INSERT INTO `user_role` VALUES ('8', '2');
+INSERT INTO `user_role` VALUES ('9', '2');

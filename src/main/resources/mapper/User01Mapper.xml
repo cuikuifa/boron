@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.od.moutian.mapper.User01Mapper">
+  <resultMap id="BaseResultMap" type="cn.od.moutian.model.User01">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="profile_photo" jdbcType="VARCHAR" property="profilePhoto" />
+    <result column="sex" jdbcType="TINYINT" property="sex" />
+    <result column="level" jdbcType="TINYINT" property="level" />
+    <result column="signature" jdbcType="VARCHAR" property="signature" />
+    <result column="role" jdbcType="VARCHAR" property="role" />
+    <result column="register_time" jdbcType="TIMESTAMP" property="registerTime" />
+    <result column="birthday" jdbcType="VARCHAR" property="birthday" />
+    <result column="follow_number" jdbcType="INTEGER" property="followNumber" />
+    <result column="fans_number" jdbcType="INTEGER" property="fansNumber" />
+    <result column="video_views" jdbcType="BIGINT" property="videoViews" />
+    <result column="type" jdbcType="TINYINT" property="type" />
+  </resultMap>
+</mapper>
