@@ -17,7 +17,7 @@ pipeline {
 		stage('git代码拉取') {
 			//拉代码
 			steps {
-				checkout([$class:'GitSCM',branches:[[name:'main']],extensions:[],userRemoteConfigs:[[credentialsId:'69d175a4-1db0-4222-af23-8b1f60570fb9',url:'https://github.com/cuikuifa/boron.git']]])
+				checkout([$class:'GitSCM',branches:[[name: git_branche]],extensions:[],userRemoteConfigs:[[credentialsId: git_credential,url: git_url]]])
 			}
 		}
 		stage('maven打包') {
